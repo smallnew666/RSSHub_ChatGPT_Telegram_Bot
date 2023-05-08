@@ -2,11 +2,11 @@
 
 通过ChatGPT分析处理RSSHub抓取的twitter数据，分析AI相关资讯等级并推送给自己的Telegram bot
 
-##前置条件
+## 前置条件
 安装RSSHub
 https://docs.rsshub.app/install/#shou-dong-bu-shu-an-zhuang
 
-# 使用方法
+## 使用方法
 1 创建Telegram机器人，获取Token
 打开 https://t.me/botfather 输入 /start
 按引导流程，先输入机器人名字，然后输入想要ID（必须以bot结尾），比如telegram_rss_bot
@@ -31,10 +31,10 @@ openai.api_key = "sk-xxxx"
 6 运行程序
 python3 index.py
 
-# 修改twitter源
+## 修改twitter源
 修改 twitter_list.txt ，一行一个name
 
-# 更多
+## 更多
 可以根据你想要处理的数据类型可以手动替换ChatGPT的系统提示词，也可以分析其他平台的信息源，reddit、facebook、youtube等等
 
 ### 参考
