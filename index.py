@@ -78,19 +78,6 @@ async def send_update_to_telegram(items):
         
         description = "\n".join(soup.stripped_strings)
         #description_zh = translator.translate(description)
-
-
-        # Get and send images from the text
-        images = soup.find_all('img', src=True)
-        # 处理图片，单独发送
-        for img in images:
-            await asyncio.to_thread(bot.send_photo, chat_id=target_chat_id, photo=img['src'])
-        # 处理视频，单独发送
-        #videos = soup.find_all('video', src=True)
-        #for video in videos:
-            #video_url = video.get("src")
-            #await asyncio.to_thread(bot.send_video, chat_id=target_chat_id, video=video_url)
-        
         pub_date_parsed = datetime.strptime(item["published"], "%a, %d %b %Y %H:%M:%S %Z")
         pub_date = pub_date_parsed.strftime("%Y-%m-%d %H:%M:%S")
         link = item["link"]
