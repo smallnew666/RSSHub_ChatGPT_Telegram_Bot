@@ -7,7 +7,9 @@
 https://docs.rsshub.app/install/#shou-dong-bu-shu-an-zhuang
 
 运行RSSHub
+```
 yarn start
+```
 
 测试是否安装成功
 http://127.0.0.1:1200
@@ -35,7 +37,9 @@ pip3 install -r requirements.txt
 openai.api_key = "sk-xxxx" 
 
 6 运行程序
+```
 python3 index.py
+```
 
 ## 修改twitter源
 修改 twitter_list.txt ，一行一个name
