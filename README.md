@@ -6,6 +6,12 @@
 安装RSSHub
 https://docs.rsshub.app/install/#shou-dong-bu-shu-an-zhuang
 
+运行RSSHub
+yarn start
+
+测试是否安装成功
+http://127.0.0.1:1200
+
 ## 使用方法
 1 创建Telegram机器人，获取Token
 打开 https://t.me/botfather 输入 /start
@@ -38,6 +44,8 @@ python3 index.py
 可以根据你想要处理的数据类型可以手动替换ChatGPT的系统提示词，也可以分析其他平台的信息源，reddit、facebook、youtube等等
 
 ### 参考
+https://github.com/DIYgod/RSSHub
+
 https://github.com/joeseesun/AIGC_Telegram_Bot
 
 
