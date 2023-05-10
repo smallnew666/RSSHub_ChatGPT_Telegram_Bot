@@ -97,17 +97,21 @@ async def send_update_to_telegram(items):
         ]
         
         messages.append({"role": "user", "content": "发布时间: "+pub_date+"内容："+description})
-        response = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo',
-            messages=messages,
-            temperature=0,
-            stream=False  # again, we set stream=True
-        )
-        generated_text = response["choices"][0]["message"].content
-        time.sleep(20)
-        res = json.loads(generated_text)
-        if res['grade']<5:
-            continue
+        try:
+            response = openai.ChatCompletion.create(
+                model='gpt-3.5-turbo',
+                messages=messages,
+                temperature=0,
+                stream=False  # again, we set stream=True
+            )
+            generated_text = response["choices"][0]["message"].content
+            time.sleep(20)
+            res = json.loads(generated_text)
+            if res['grade']<5:
+                continue
+        except ExceptionType:
+             res['grade']=0
+             res['analysis]=""
         message = (
             f"From {author}:\n\n"
             f"发布时间: {pub_date}\n\n"
