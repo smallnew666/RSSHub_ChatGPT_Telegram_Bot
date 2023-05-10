@@ -109,9 +109,10 @@ async def send_update_to_telegram(items):
             res = json.loads(generated_text)
             if res['grade']<5:
                 continue
-        except ExceptionType:
-             res['grade']=0
-             res['analysis]=""
+        except Exception as e:
+            print(e)
+            res['grade']=0
+            res['analysis']=""
         message = (
             f"From {author}:\n\n"
             f"发布时间: {pub_date}\n\n"
