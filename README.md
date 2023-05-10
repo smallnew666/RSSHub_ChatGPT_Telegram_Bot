@@ -35,6 +35,7 @@ pip3 install -r requirements.txt
 5 设置openai api_key
 
 添加api_key到index.py
+
 ```
 openai.api_key = "sk-xxxx" 
 ```
