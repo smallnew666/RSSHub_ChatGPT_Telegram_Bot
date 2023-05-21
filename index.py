@@ -93,7 +93,7 @@ async def send_update_to_telegram(items):
             continue
         openai.api_key = "" #修改这里为自己申请的api_key
         messages = [
-            {"role": "system", "content": '你是一个著名的自媒体编辑，你可以对收到的资讯进行分析评级，等级分为1-10，根据发布时间，与AI内容的关联性，AI资讯的重要性等各个维度进行评级，评级方向着重于AI信息，下面我给你来自twitter的内容，请你对内容进行分析,用中文回答，回答格式为json格式，{"grade":得分,"analysis":"分析"}：'},
+            {"role": "system", "content": '你是一个著名的自媒体编辑，你可以对收到的twitter推文进行分析评级，等级分为1-10，其中1表示完全无关，而10表示密切相关或有重大影响，根据内容与AI的关联性、AI资讯的重要性等各个维度进行评级，评级方向着重于AI信息，下面我给你来自twitter的内容，请你对内容进行分析,用中文回答，回答格式为json格式，{"grade":得分,"analysis":"分析"}：'},
         ]
         
         messages.append({"role": "user", "content": "发布时间: "+pub_date+"内容："+description})
